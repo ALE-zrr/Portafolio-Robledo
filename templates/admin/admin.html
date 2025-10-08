@@ -1,0 +1,43 @@
+{% extends "admin/inicio-admin.html" %}
+{% block content %}
+
+<section class="admin-hero">
+  <div class="hero-bar">
+    <div class="user-chip">
+      <span class="avatar">{{ session['usuario'][:1] }}</span>
+      <span class="label">Hola, {{ session['usuario'] }}</span>
+    </div>
+    <form action="{{ url_for('logout') }}" method="GET">
+      <button type="submit" class="btn-out">Cerrar sesión</button>
+    </form>
+  </div>
+  <h1 class="admin-title">Panel de administración</h1>
+</section>
+
+<section class="admin-grid metro">
+  <article class="card angle">
+    <header><h3>Gestión de Proyectos</h3></header>
+    <p>Agregar, editar o eliminar proyectos en el portafolio.</p>
+    <a href="Admin_proyectos" class="btn-go">Ir a Proyectos</a>
+  </article>
+
+  <article class="card angle">
+    <header><h3>Gestión de Información Personal</h3></header>
+    <p>Actualizar la información personal mostrada en el portafolio.</p>
+    <a href="Informacion_personal" class="btn-go">Ir a Información</a>
+  </article>
+
+  <article class="card angle">
+    <header><h3>Gestión de Comentarios</h3></header>
+    <p>Revisar y gestionar los comentarios recibidos.</p>
+    <a href="comentarios" class="btn-go">Ir a Comentarios</a>
+  </article>
+
+  <article class="card angle">
+    <header><h3>Gestión de Habilidades</h3></header>
+    <p>Agregar, editar o eliminar habilidades en el portafolio.</p>
+    <a href="skills" class="btn-go">Ir a Habilidades</a>
+  </article>
+</section>
+
+{% endblock %}

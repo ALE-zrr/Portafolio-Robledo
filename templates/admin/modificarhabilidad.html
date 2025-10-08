@@ -1,0 +1,26 @@
+{% extends "admin/inicio-admin.html" %} {% block content %}
+
+<div>
+    {% if h %}
+    <div class="cuadro-habilidades">
+        <div class="habilidades">
+            <form action="{{ url_for('modificarh') }}" method="POST">
+                <input type="hidden" name="id" value="{{ h.id }}">
+                <div>
+                    <input type="text" name="nombreeditar" value="{{ h.Nombre }}" autocomplete="off">
+                </div>
+                <div >
+                    <textarea  name="descripcion">{{ h.Descripcion }}</textarea>
+                </div>
+                <textarea name="svg">{{ h.Svg }}</textarea>
+
+                <button type="submit" class="btn-cerrar-sesion">Guardar</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <p>No hay habilidades registradas.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

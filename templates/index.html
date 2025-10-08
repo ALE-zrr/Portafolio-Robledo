@@ -1,0 +1,34 @@
+{% extends "inicio.html" %}
+{% block content %}
+
+<header class="alineacion">
+  <h1 class="texto"><a href="/login" class="texto">David Robledo</a></h1><br><br>
+  <h2 class="texto">Aprendiz del Sena</h2>
+</header>
+
+<div class="centrar">
+  <button class="boton_contacto">
+    <a href="https://api.whatsapp.com/send?phone=3118259503&amp;text= desde mi portafolio" class="Boton_texto"
+      target="_blank">CONTACTAME</a>
+  </button>
+</div>
+
+<section class="separaciones" aria-labelledby="habilidades-title">
+  <h1 id="habilidades-title" class="texto">MIS HABILIDADES</h1>
+
+  {% if habilidades %}
+  <div class="columnas">
+    {% for h in habilidades %}
+    <article class="cuadro_columnas">
+      <h2 class="textoDentroCuadro">{{ h.Nombre }}</h2>
+      <p class="textoDentroCuadro">{{ h.Descripcion }}</p>
+      <div class="textoDentroCuadro" aria-hidden="true">{{ h.Svg|safe }}</div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="texto_columnas">No hay habilidades registradas.</p>
+  {% endif %}
+</section>
+
+{% endblock %}

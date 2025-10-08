@@ -1,0 +1,43 @@
+{% extends "admin/inicio-admin.html" %}
+{% block content %}
+
+<header class="toolbar">
+  <a href="{{ url_for('admin') }}" class="tool-back">← Regresar</a>
+  <h1 class="tool-title">Comentarios</h1>
+
+</header>
+
+<main class="comments-shell">
+  <section class="panel comments-panel">
+    <div class="table-scroll">
+      <table class="data-table" aria-label="Comentarios recibidos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Mensaje</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for mensaje in mensajes %}
+          <tr>
+            <td data-label="Nombre">{{ mensaje.Nombre }}</td>
+            <td data-label="Correo">{{ mensaje.Correo }}</td>
+            <td data-label="Teléfono">{{ mensaje.Telefono }}</td>
+            <td data-label="Mensaje">{{ mensaje.Mensaje }}</td>
+            <td data-label="Fecha"><span class="badge-date">{{ mensaje.fecha }}</span></td>
+          </tr>
+          {% else %}
+          <tr class="empty-row">
+            <td colspan="5" class="empty">No hay comentarios registrados.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

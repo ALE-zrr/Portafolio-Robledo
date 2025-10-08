@@ -1,0 +1,47 @@
+{%extends "inicio.html" %} {% block content %}
+
+<div class="contenedor-sobremi">
+  <div>
+    <div class="perfil">
+      <div class="PERFIL_IMAGEN">
+        <img class="Imagen_perfil" src="/static/Imagenes/ROBLEDO.webp" alt="" />
+      </div>
+      {%if info%}
+      <div class="PERFIL_CONTENIDO">
+        <h1> DAVID ROBLEDO <br><span> tecnico en programación</span> <br></h1>
+        <p>
+          <br>{{info.Perfil}}<br />
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="">
+  <div class="Contenedor_acerca">
+    <section>
+      <h2 class="PERFILES">Perfil Profesional</h2>
+      <p class="Margen">
+        {{info.PerfilPro}}<br />
+        <br />
+        <strong>Edad:</strong> {{info.edad}} años<br />
+        <strong>Fecha de Nacimiento:</strong> {{info.fecha_nacimiento}}<br />
+      </p>
+    </section>
+  </div>
+  <div class="Contenedor_acerca">
+    <section class="seccion">
+      <h2 class="PERFILES">Experiencia Laboral</h2>
+      <br />
+      <p>
+        {{info.XP}}
+      </p>
+    </section>
+  </div>
+</div>
+</div>
+{%endif%}
+</div>
+</div>
+
+
+{% endblock %}

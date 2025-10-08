@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Formulario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/proyectos.css') }}">
+
+</head>
+
+<body class="fondo_pagina">
+    {% include "/Components/header.html" %}
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {% include "Components/footer.html" %}
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

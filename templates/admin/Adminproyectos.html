@@ -1,0 +1,94 @@
+{% extends "admin/inicio-admin.html" %}
+{% block content %}
+
+<header class="toolbar">
+  <a href="{{ url_for('admin') }}" class="tool-back">← Regresar</a>
+
+  <h1 class="tool-title">Proyectos</h1>
+
+  <form action="{{ url_for('logout') }}" method="GET" class="tool-actions">
+    <button type="submit" class="tool-logout">Cerrar sesión</button>
+  </form>
+</header>
+
+<main class="shell">
+  <section class="split">
+    <!-- PANEL LISTA (AHORA A LA IZQUIERDA Y MÁS ANCHO) -->
+    <section class="panel panel-lista">
+      <header class="subtoolbar">
+        <div class="stats">
+          <strong>Listado</strong>
+          <span>{{ proyectos|length }} en total</span>
+        </div>
+
+      </header>
+
+      <div class="cards-grid">
+        {% for proyecto in proyectos %}
+        <article class="card item">
+          <header class="item-head">
+            <h3 class="item-title">{{ proyecto.Nombre }}</h3>
+            <small class="item-date">{{ proyecto.fecha_creacion }}</small>
+          </header>
+
+          <p class="item-desc">{{ proyecto.Descripcion }}</p>
+
+          <div class="item-media">
+            {{ proyecto.Svg | safe }}
+          </div>
+
+          <footer class="item-actions">
+            <a href="{{ proyecto.link }}" target="_blank" rel="noopener" class="btn view">Ver</a>
+
+            <a href="{{ url_for('modificarp') }}?id={{ proyecto.id }}" class="btn edit">Modificar</a>
+
+            <form action="/eliminar_proyecto" method="POST" class="inline">
+              <input type="hidden" name="id" value="{{ proyecto.id }}">
+              <button type="submit" class="btn danger">Eliminar</button>
+            </form>
+          </footer>
+        </article>
+        {% else %}
+        <p class="empty">No hay proyectos registrados.</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- PANEL NUEVO (AHORA A LA DERECHA, STICKY) -->
+    <aside class="panel panel-nuevo">
+      <header class="panel-head">
+        <h2>Nuevo proyecto</h2>
+        <p>Completa los campos y publica al instante.</p>
+      </header>
+
+      <form method="POST" action="/Admin_proyectos" class="composer">
+        <div class="field">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" name="descripcionproyecto" rows="6" placeholder="Describe brevemente tu proyecto…" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="svgproyecto">URL del SVG</label>
+          <input id="svgproyecto" name="svgproyecto" type="text" autocomplete="off" required>
+        </div>
+
+        <div class="field">
+          <label for="link">URL del Proyecto</label>
+          <input id="link" name="link" type="text" autocomplete="off" required>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Agregar Proyecto</button>
+          <button type="reset" class="btn ghost">Limpiar</button>
+        </div>
+      </form>
+    </aside>
+  </section>
+</main>
+
+{% endblock %}

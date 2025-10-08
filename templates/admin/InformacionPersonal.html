@@ -1,0 +1,58 @@
+{% extends "admin/inicio-admin.html" %}
+{% block content %}
+
+<header class="toolbar">
+  <a href="{{ url_for('admin') }}" class="tool-back">← Regresar</a>
+  <h1 class="tool-title">Modificar información</h1>
+  <div></div>
+</header>
+
+<main class="info-shell">
+  {% if h %}
+  <section class="info-layout">
+    <form action="{{ url_for('Informacion') }}" method="POST" class="info-form panel">
+      <input type="hidden" name="id" value="{{ h.id }}">
+
+      <div class="info-field">
+        <label for="perfil">Resumen personal</label>
+        <textarea id="perfil" name="Perfil" rows="6" required>{{ h.Perfil }}</textarea>
+      </div>
+
+      <div class="info-field">
+        <label for="perfilpro">Perfil profesional</label>
+        <textarea id="perfilpro" name="PerfilPro" rows="6" required>{{ h.PerfilPro }}</textarea>
+      </div>
+
+      <div class="info-field">
+        <label for="xp">Experiencia</label>
+        <textarea id="xp" name="XP" rows="6" required>{{ h.XP }}</textarea>
+      </div>
+
+      <div class="info-grid-2">
+        <div class="info-field">
+          <label for="fecha">Fecha de nacimiento</label>
+          <input id="fecha" name="fechaNac" type="text" value="{{ h.fecha_nacimiento }}" placeholder="YYYY-MM-DD" required>
+        </div>
+      </div>
+
+      <div class="info-actions">
+        <button type="submit" class="btn primary">Guardar</button>
+        <a href="{{ url_for('admin') }}" class="btn ghost">Cancelar</a>
+      </div>
+    </form>
+
+    <aside class="panel info-aside">
+      <h3 class="aside-title">Ayuda rápida</h3>
+      <ul class="aside-list">
+        <li>Escribe en tono claro y breve.</li>
+        <li>Usa viñetas en “Experiencia” si lo necesitas.</li>
+        <li>La fecha debe estar en formato <strong>YYYY-MM-DD</strong>.</li>
+      </ul>
+    </aside>
+  </section>
+  {% else %}
+  <p class="empty">No hay información para editar.</p>
+  {% endif %}
+</main>
+
+{% endblock %}

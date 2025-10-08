@@ -1,0 +1,31 @@
+{% extends "inicio.html" %} 
+{% block content %}
+
+<section class="projects-hero">
+  <h1 class="projects-title">Proyectos</h1>
+</section>
+
+<section class="projects-shell">
+  <div class="project-grid">
+    {% for proyecto in Mproyectos %}
+    <article class="project-card">
+      <header class="project-head">
+        <h2 class="project-name">{{ proyecto.Nombre }}</h2>
+        <time class="project-date">{{ proyecto.fecha_creacion }}</time>
+      </header>
+
+      <p class="project-desc">{{ proyecto.Descripcion }}</p>
+
+      <div class="project-icon">
+        {{ proyecto.Svg | safe }}
+      </div>
+
+      <a href="{{ proyecto.link }}" target="_blank" rel="noopener" class="project-link">Ver proyecto</a>
+    </article>
+    {% else %}
+    <p class="projects-empty">No hay proyectos publicados.</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

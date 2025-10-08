@@ -1,0 +1,459 @@
+.barra_navegacion {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  border: double blue 10px;
+  border-radius: 10px;
+}
+
+.texto_navegacion {
+  text-decoration: none;
+  color: lightblue;
+  padding: 10px;
+  width: 150px;
+  font-size: 30px;
+  background-color: transparent;
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+  z-index: 2;
+}
+
+.texto_navegacion:hover {
+  color: lightcyan;
+  transform: scale(1.5);
+  transition-duration: 0.5s;
+}
+
+.fondo_pagina {
+  background-image: url(../Imagenes/FONDO\ AZUL.webp);
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+}
+
+.texto {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  color: lightblue;
+  background-color: transparent;
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+  z-index: 2;
+}
+
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin: 50px;
+  padding: 30px;
+}
+
+.texto_columnas {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  color: lightblue;
+  background-color: transparent;
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+  z-index: 2;
+}
+
+.cuadro_columnas {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  color: lightblue;
+  box-shadow: 16px 14px 20px #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid blue 3px;
+}
+
+.cuadro_columnas::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: inset 16px 14px 20px #000000;
+}
+
+.separaciones {
+  margin-top: 100px;
+}
+
+.boton_contacto {
+  display: flex;
+  border: solid blue 3px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.boton_contacto:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.Boton_texto {
+  color: lightblue;
+  text-decoration: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.centrar {
+  display: flex;
+  justify-content: center;
+}
+
+.Imagen-BUTTON {
+  border: none;
+  color: lightblue;
+  background: none;
+  cursor: pointer;
+}
+
+.Imagen-BUTTON:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.tamaño_imagen {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+  background-color: transparent;
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+  color: lightblue;
+}
+
+.cuadro {
+  padding: 20px;
+  margin: 100px 400px;
+  backdrop-filter: blur(10px);
+}
+
+.alineacion {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.perfil {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 50px;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.PERFIL_IMAGEN {
+  width: 40%;
+}
+
+.Imagen_perfil {
+  object-fit: cover;
+  width: 100%;
+  border: solid blue 5px;
+  border-radius: 50%;
+}
+
+.PERFIL_CONTENIDO {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 30px;
+  width: 60%;
+  border: solid blue 5px;
+  color: lightblue;
+  z-index: 2;
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+}
+
+.PERFIL_CONTENIDO h1, .PERFIL_CONTENIDO span, .PERFIL_CONTENIDO p {
+  font-size: 25px;
+  background-color: transparent;
+  text-shadow: 5px 5px 5px black;
+  color: lightblue;
+}
+
+.boton_acerca {
+  background-color: rgba(21, 21, 21, 0.3);
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid blue 5px;
+}
+
+.boton_acerca:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+
+.Contenedor_acerca {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto 30px;
+  border: 5px blue solid;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 50px;
+  line-height: 1.5;
+  font-size: 20px;
+  width: 90%;
+  color: lightblue;
+  text-shadow: 5px 5px 5px black;
+  z-index: 2;
+}
+
+.textoDentroCuadro {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-align: center;
+  color: lightblue;
+  text-shadow: 5px 5px 5px black;
+  z-index: 2;
+}
+
+.imagenCuadro {
+  display: flex;
+  justify-content: center;
+  color: blue;
+}
+
+.btn_Menu {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .perfil {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .PERFIL_IMAGEN {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .PERFIL_CONTENIDO {
+    width: 90%;
+  }
+
+  .Contenedor_acerca {
+    width: 70%;
+    margin: 30px auto;
+  }
+
+  .PERFIL_CONTENIDO button {
+    margin-left: 30px;
+  }
+
+  .Boton_texto {
+    font-size: 25px;
+  }
+
+  .Margen {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .boton_acerca {
+    margin-top: 20px;
+  }
+
+  .cuadro {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .columnas {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .perfil {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .PERFIL_IMAGEN {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .PERFIL_CONTENIDO {
+    width: 90%;
+  }
+
+  .Contenedor_acerca {
+    width: 70%;
+  }
+  .PERFIL_CONTENIDO button {
+    margin-left: 30px;
+  }
+  .Boton_texto {
+    font-size: 25px;
+  }
+  .Margen {
+    margin: 10px;
+    padding: 10px;
+  }
+  .Contenedor_acerca {
+    margin: 30px;
+  }
+  .boton_acerca {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .btn_Menu {
+    display: block;
+  }
+
+  .barra_navegacion {
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  #btnMenu {
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 0.5s;
+      margin-right: 1000px;
+    }
+  }
+  .texto_formulario {
+    font-size: 10px;
+  }
+}
+.navbar {
+  display: none;
+}
+.no_navbar {
+  display: flex;
+}
+
+@font-face {
+  font-family: kayana;
+  src: url("Italianno-Regular.ttf");
+}
+
+.texto-boton-formulario {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px blue solid;
+  padding: 5px;
+  background-color: rgba(28, 28, 28, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  font-family: italic;
+  color: lightblue;
+}
+
+.texto_formulario {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color: lightblue;
+}
+
+.fondo-formulario {
+  position: relative;
+  background-image: url(../Imagenes/FONDO\ AZUL.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  padding: 5px;
+  color: lightblue;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: solid blue 1px;
+  color: lightblue;
+}
+@media (max-width: 480px) {
+  .cuadro {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 720px) {
+  .texto {
+    text-align: center;
+  }
+  .decoracion {
+    font-size: 45px;
+  }
+
+  .columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 50px;
+    padding: 20px;
+  }
+  .boton_contacto {
+    font-size: 45px;
+    padding: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .columnas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 0;
+  }
+}

@@ -1,0 +1,28 @@
+{%extends "inicio.html" %}
+{% block content %}
+
+<div class="Columnalogin">
+  <div class="Login">
+    <div class="logo-login">
+      <div>
+        <div>
+          <div class="iniciar">Iniciar</div>
+          <div class="sesion">Sesion</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form class="decoracioninicio" method="POST">
+        <div class="">
+          <label class="textologin">Usuario:</label><br><br>
+          <input class="campologin" type="text" name="usuario" placeholder="Nombre"><br><br>
+          <label class="textologin">Contraseña:</label><br><br>
+          <input class="campologin" type="password" name="password" placeholder="Contraseña"><br><br>
+          <input class="botonlogin" type="submit" value="Ingresar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

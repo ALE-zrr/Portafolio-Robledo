@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 50% -220px, #0f1f45 0%, rgba(15, 31, 69, 0) 60%),
+    linear-gradient(180deg, #060a16, #0a1226 40%, #060a16);
+  color: #eaf2ff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+  line-height: 1.55
+}
+
+.Columnalogin {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 16px
+}
+
+.Login {
+  width: 100%;
+  max-width: 460px;
+  background: linear-gradient(135deg, rgba(14, 27, 61, .9), rgba(8, 18, 42, .9));
+  border: 1px solid rgba(147, 197, 253, .25);
+  border-radius: 22px;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, .55);
+  overflow: hidden
+}
+
+.logo-login {
+  padding: 18px 18px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.iniciar,
+.sesion {
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  background: linear-gradient(90deg, #93c5fd, #60a5fa 40%, #22d3ee 70%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block
+}
+
+.sesion {
+  margin-left: 8px
+}
+
+.decoracioninicio {
+  display: grid;
+  gap: 12px;
+  padding: 14px 18px 20px
+}
+
+.textologin {
+  font-weight: 700;
+  color: #f6f9ff
+}
+
+.campologin {
+  width: 100%;
+  padding: 12px 12px;
+  background: #0f1a36;
+  color: #f2f6ff;
+  border: 1px solid #223462;
+  border-radius: 14px;
+  transition: border-color .12s ease, box-shadow .12s ease, background .12s ease
+}
+
+.campologin::placeholder {
+  color: #9bb3e6
+}
+
+.campologin:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .28);
+  background: #0f1e44
+}
+
+/* corrige autofill */
+.campologin:-webkit-autofill {
+  -webkit-text-fill-color: #f2f6ff;
+  transition: background-color 9999s ease-in-out 0s
+}
+
+.texto-boton-formulario,
+.botonlogin {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  background: linear-gradient(90deg, #22d3ee, #60a5fa, #2563eb);
+  color: #06122a;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, .35), 0 2px 0 rgba(0, 0, 0, .35) inset;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease
+}
+
+.botonlogin:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(37, 99, 235, .45), 0 2px 0 rgba(0, 0, 0, .35) inset
+}
+
+.botonlogin:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, .45)
+}
+
+/* espaciado del bloque interno del form */
+.decoracioninicio>div {
+  display: grid;
+  gap: 10px
+}
+
+/* responsivo */
+@media (max-width:480px) {
+  .Login {
+    border-radius: 18px
+  }
+
+  .decoracioninicio {
+    padding: 12px 14px 16px
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important
+  }
+}

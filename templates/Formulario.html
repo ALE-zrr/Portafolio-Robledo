@@ -1,0 +1,37 @@
+{% extends "inicio.html" %}
+{% block content %}
+
+<div>
+    <div>
+        <div class="cuadro">
+            <form id="form" action="{{ url_for('contacto') }}" method="POST" autocomplete="off">
+                <div class="texto_formulario">
+                    <h1>CONTACTAME</h1>
+                </div>
+                <div class="alineacion">
+                    <label class="texto-campos-formulario" for="name">Nombre:</label>
+                    <input class="fondo-formulario" name="name" id="name" type="text" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="alineacion">
+                    <label class="texto-campos-formulario" for="phone">Celular:</label>
+                    <input class="fondo-formulario" name="phone" id="phone" type="tel" placeholder="Ingresa tu Numero" required>
+                </div>
+                <div class="alineacion">
+                    <label class="texto-campos-formulario" for="email">Correo Electrionico:</label>
+                    <input class="fondo-formulario" name="email" id="email" type="email" placeholder="Ingresa tu correo" required>
+                </div>
+                <div class="alineacion">
+                    <label class="texto-campos-formulario" for="mensaje">Mensaje:</label>
+                    <textarea class="fondo-formulario" name="mensaje" id="mensaje" placeholder="Ingresa tu Mensaje" required></textarea>
+                </div>
+                <div class="texto_formulario">
+                    <button id="submit" type="submit" class="texto-boton-formulario">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

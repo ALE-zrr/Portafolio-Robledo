@@ -1,0 +1,61 @@
+{% extends "admin/inicio-admin.html" %}
+{% block content %}
+
+<header class="toolbar">
+  <a href="{{ url_for('admin') }}" class="tool-back">← Regresar</a>
+  <h1 class="tool-title">Habilidades</h1>
+  <div></div>
+</header>
+
+<main class="skills-shell">
+  <section class="skills-layout">
+    <aside class="panel panel-add">
+      <h2 class="panel-title">Nueva habilidad</h2>
+      <form action="/skills" method="POST" class="form-add">
+        <label for="habilidad">Nombre</label>
+        <input id="habilidad" name="habilidad" type="text" placeholder="Ej. Python, Comunicación" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="5" placeholder="Breve descripción de la habilidad"
+          required></textarea>
+
+        <label for="svg">URL del SVG</label>
+        <input id="svg" name="svg" type="text" placeholder="https://..." autocomplete="off" required>
+
+        <button type="submit" class="btn primary">Registrar Habilidad</button>
+      </form>
+    </aside>
+
+    <section class="panel panel-list">
+      <h2 class="panel-title">Listado</h2>
+
+      {% if habilidades %}
+      <div class="cards">
+        {% for h in habilidades %}
+        <article class="card">
+          <header class="card-head">
+            <h3 class="card-title">{{ h.Nombre }}</h3>
+          </header>
+
+          <p class="card-desc">{{ h.Descripcion }}</p>
+
+          <div class="icon">{{ h.Svg|safe }}</div>
+
+          <div class="actions">
+            <form action="/eliminar_habilidad" method="POST">
+              <input type="hidden" name="id" value="{{ h.id }}">
+              <button type="submit" class="btn danger">Eliminar</button>
+            </form>
+            <a href="{{ url_for('modificarh') }}?id={{ h.id }}" class="btn secondary">Modificar</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="empty">No hay habilidades registradas.</p>
+      {% endif %}
+    </section>
+  </section>
+</main>
+
+{% endblock %}
