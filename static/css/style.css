@@ -1,35 +1,8 @@
-.barra_navegacion {
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-around;
-  padding: 50px;
-  border: double blue 10px;
-  border-radius: 10px;
-}
-
-.texto_navegacion {
-  text-decoration: none;
-  color: lightblue;
-  padding: 10px;
-  width: 150px;
-  font-size: 30px;
-  background-color: transparent;
-  text-align: center;
-  text-shadow: 5px 5px 5px black;
-  z-index: 2;
-}
-
-.texto_navegacion:hover {
-  color: lightcyan;
-  transform: scale(1.5);
-  transition-duration: 0.5s;
-}
-
 .fondo_pagina {
   background-image: url(../Imagenes/FONDO\ AZUL.webp);
-  background-repeat: no-repeat;
   backdrop-filter: blur(10px);
+  background-size: cover;
+  background-repeat: repeat-y;
 }
 
 .texto {
@@ -194,7 +167,9 @@
   text-shadow: 5px 5px 5px black;
 }
 
-.PERFIL_CONTENIDO h1, .PERFIL_CONTENIDO span, .PERFIL_CONTENIDO p {
+.PERFIL_CONTENIDO h1,
+.PERFIL_CONTENIDO span,
+.PERFIL_CONTENIDO p {
   font-size: 25px;
   background-color: transparent;
   text-shadow: 5px 5px 5px black;
@@ -250,9 +225,7 @@
   color: blue;
 }
 
-.btn_Menu {
-  display: none;
-}
+/* btn_Menu removed from here (CSS for navbar was removed) */
 
 @media (max-width: 480px) {
   .perfil {
@@ -322,57 +295,31 @@
   .Contenedor_acerca {
     width: 70%;
   }
+
   .PERFIL_CONTENIDO button {
     margin-left: 30px;
   }
+
   .Boton_texto {
     font-size: 25px;
   }
+
   .Margen {
     margin: 10px;
     padding: 10px;
   }
+
   .Contenedor_acerca {
     margin: 30px;
   }
+
   .boton_acerca {
     margin-top: 20px;
   }
 }
-@media (max-width: 480px) {
-  .btn_Menu {
-    display: block;
-  }
 
-  .barra_navegacion {
-    flex-direction: column-reverse;
-    gap: 20px;
-    align-items: center;
-    text-align: center;
-  }
-
-  #btnMenu {
-    margin: 10px 10px 10px 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
-    &:hover {
-      transform: scale(1.2);
-      transition-duration: 0.5s;
-      margin-right: 1000px;
-    }
-  }
-  .texto_formulario {
-    font-size: 10px;
-  }
-}
 .navbar {
   display: none;
-}
-.no_navbar {
-  display: flex;
 }
 
 @font-face {
@@ -420,6 +367,7 @@
   border: solid blue 1px;
   color: lightblue;
 }
+
 @media (max-width: 480px) {
   .cuadro {
     width: 80%;
@@ -428,10 +376,12 @@
     margin-bottom: 20px;
   }
 }
+
 @media (max-width: 720px) {
   .texto {
     text-align: center;
   }
+
   .decoracion {
     font-size: 45px;
   }
@@ -443,11 +393,13 @@
     margin: 50px;
     padding: 20px;
   }
+
   .boton_contacto {
     font-size: 45px;
     padding: 10px;
   }
 }
+
 @media (max-width: 480px) {
   .columnas {
     display: grid;

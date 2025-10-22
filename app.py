@@ -83,7 +83,7 @@ def proyectos():
 @login_required
 def comentarios():
     mensajes = query_all("SELECT * FROM contacto")
-    return render_template('admin/comentarios.html', mensajes=mensajes, comentarios=True)
+    return render_template('admin/Comentarios.html', mensajes=mensajes, comentarios=True)
 
 # Login
 @app.route('/login', methods=['GET', 'POST'])

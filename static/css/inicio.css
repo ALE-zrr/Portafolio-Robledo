@@ -1,0 +1,262 @@
+:root {
+    --bg-a: #011839;
+    --bg-b: #022a4b;
+    --accent: #26c8fb;
+    --accent-soft: #83e6fe;
+    --card: #072032;
+    --muted: rgba(255, 255, 255, 0.12);
+    --text: #eaf8ff;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:
+        radial-gradient(900px 500px at 10% 20%, rgba(38, 200, 251, 0.06), transparent 8%),
+        radial-gradient(700px 350px at 80% 70%, rgba(131, 230, 254, 0.05), transparent 10%),
+        linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 100%);
+    -webkit-font-smoothing: antialiased
+}
+
+/* Layout principal */
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px 36px
+}
+
+/* Hero con dos columnas y más detalle */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    align-items: center;
+    padding: 28px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgb(251, 251, 251);
+}
+
+.hero-left {
+    padding: 18px
+}
+
+.nombre {
+    font-size: 44px;
+    letter-spacing: 0.4px;
+    margin-bottom: 6px;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.6)
+}
+
+.nombre-link {
+    color: var(--text);
+    text-decoration: none
+}
+
+.rol {
+    font-size: 20px;
+    margin-bottom: 14px;
+    opacity: 0.95
+}
+
+.resumen {
+    max-width: 760px
+}
+
+.texto-resumen {
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.95;
+    margin-bottom: 14px
+}
+
+/* CTAs */
+.cta-group {
+    display: flex;
+    gap: 12px
+}
+
+.btn-contacto {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(4, 79, 137, 0.88);
+    text-decoration: none;
+    font-weight: 700;
+    background: linear-gradient(180deg, rgba(4, 79, 137, 0.06), rgba(4, 79, 137, 0.02));
+    color: var(--text)
+}
+
+/* Aside derecho con tarjetas de texto */
+.hero-right {
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+    border: 1px solid var(--glass)
+}
+
+.stats {
+    margin-bottom: 12px
+}
+
+.stat-item {
+    font-size: 14px;
+    opacity: 0.95;
+    margin-bottom: 8px
+}
+
+.mini-nota {
+    font-size: 13px;
+    opacity: 0.9
+}
+
+/* Habilidades: grid y detalles */
+.skills {
+    padding: 8px 4px 22px;
+}
+
+.skills-heading {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    color: black;
+
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    border: 3px solid rgb(251, 251, 251);
+}
+
+.skill {
+    padding: 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+    border: 1px solid var(--glass);
+    backdrop-filter: blur(10px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px
+}
+
+.skill-svg {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.skill-title {
+    font-size: 16px;
+    font-weight: 700
+}
+
+.skill-details summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    margin-bottom: 6px
+}
+
+.skill-text {
+    font-size: 14px;
+    line-height: 1.45;
+    opacity: 0.95
+}
+
+/* Mensaje cuando no hay habilidades */
+.skills-empty {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 12px
+}
+
+/* Footer y botón de login poco visible */
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    position: relative
+}
+
+.footer-note {
+    font-size: 13px;
+    opacity: 0.85
+}
+
+/* LOGIN GHOST: esquina inferior derecha, pequeño, baja opacidad, casi invisible */
+.login-ghost {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text);
+    opacity: 0.18;
+    /* muy tenue */
+    font-size: 12px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: opacity .18s ease, transform .18s ease;
+    z-index: 999;
+}
+
+/* sutil hover para usuarios que accidentalmente pasen el cursor */
+.login-ghost:hover {
+    opacity: 0.36;
+    transform: translateY(-2px)
+}
+
+/* Enlaces y comportamiento general */
+a {
+    color: inherit
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-soft)
+}
+
+/* Responsive */
+@media (max-width:980px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 18px
+    }
+
+    .nombre {
+        font-size: 34px
+    }
+
+    .hero-right {
+        order: 2
+    }
+
+    .login-ghost {
+        right: 8px;
+        bottom: 8px
+    }
+}

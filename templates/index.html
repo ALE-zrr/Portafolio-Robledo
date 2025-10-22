@@ -1,34 +1,67 @@
 {% extends "inicio.html" %}
 {% block content %}
 
-<header class="alineacion">
-  <h1 class="texto"><a href="/login" class="texto">David Robledo</a></h1><br><br>
-  <h2 class="texto">Aprendiz del Sena</h2>
-</header>
+<main class="wrap">
 
-<div class="centrar">
-  <button class="boton_contacto">
-    <a href="https://api.whatsapp.com/send?phone=3118259503&amp;text= desde mi portafolio" class="Boton_texto"
-      target="_blank">CONTACTAME</a>
-  </button>
-</div>
+  <!-- Hero complejo con columnas y descripción -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="nombre"><a href="/login" class="nombre-link">David Robledo</a></h1>
+      <p class="rol">Aprendiz del Sena</p>
 
-<section class="separaciones" aria-labelledby="habilidades-title">
-  <h1 id="habilidades-title" class="texto">MIS HABILIDADES</h1>
+      <div class="resumen">
+        <p class="texto-resumen">
+          Estudiante en formación con interés en desarrollo web y diseño de interfaces. Me gusta construir
+          proyectos prácticos y documentar el proceso de aprendizaje.
+        </p>
 
-  {% if habilidades %}
-  <div class="columnas">
-    {% for h in habilidades %}
-    <article class="cuadro_columnas">
-      <h2 class="textoDentroCuadro">{{ h.Nombre }}</h2>
-      <p class="textoDentroCuadro">{{ h.Descripcion }}</p>
-      <div class="textoDentroCuadro" aria-hidden="true">{{ h.Svg|safe }}</div>
-    </article>
-    {% endfor %}
-  </div>
-  {% else %}
-  <p class="texto_columnas">No hay habilidades registradas.</p>
-  {% endif %}
-</section>
+        <!-- llamada a acciones: contacto visible, inicio de sesión oculto (separado más abajo) -->
+        <div class="cta-group">
+          <a class="btn-contacto" href="https://api.whatsapp.com/send?phone=3118259503&amp;text= desde mi portafolio" target="_blank">CONTACTAME</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="stats">
+        <p class="stat-item"><strong>Formación:</strong> Sena</p>
+        <p class="stat-item"><strong>Intereses:</strong> Web · Interfaces · Aprendizaje</p>
+      </div>
+
+      <!-- texto adicional (solo texto nuevo permitido) -->
+      <div class="mini-nota">
+        <p>Actualmente mejorando habilidades en HTML, CSS y Python; trabajando en proyectos reales del curso.</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Sección de habilidades con detalles desplegables para dar más profundidad -->
+  <section class="skills" aria-labelledby="skills-heading">
+    <h2 id="skills-heading" class="skills-heading">MIS HABILIDADES</h2>
+
+    {% if habilidades %}
+    <div class="skills-list">
+      {% for h in habilidades %}
+      <article class="skill">
+        <header class="skill-header">
+          <div class="skill-svg">{{ h.Svg|safe }}</div>
+          <h3 class="skill-title">{{ h.Nombre }}</h3>
+        </header>
+
+        <!-- uso de details/summary para ofrecer más interacción sin JS -->
+        <details class="skill-details">
+          <summary class="skill-summary">Ver descripción</summary>
+          <p class="skill-text">{{ h.Descripcion }}</p>
+        </details>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="skills-empty">No hay habilidades registradas.</p>
+    {% endif %}
+  </section>
+
+
+</main>
 
 {% endblock %}
